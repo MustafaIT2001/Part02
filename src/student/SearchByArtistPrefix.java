@@ -51,11 +51,6 @@ public class SearchByArtistPrefix {
         int index = Arrays.binarySearch(songs, tempSong, new ArtistComparator());
 
         // If the search doesn't find the exact match, it return 0.
-        
-        //  1. ***** = > would it be better to have a else statement to 
-        //  avoid "index out of bound" error when if it's true? 
-        //  for now, if index < 0, the following  "while" statements will still run *****
-        
         if (index < 0) { 
             // if not found, calculate the position that would be inserted at.
             index = -index - 1;
@@ -67,7 +62,7 @@ public class SearchByArtistPrefix {
 
         // look in the right if the exact match found.
         
-        //  2. ******* since you are using same variable "index" to keep track of the index, 
+        //  1. ******* since you are using same variable "index" to keep track of the index, 
         //  the output might not be accurated when you start your 2nd while loop, 
         //  i found dulplicted output in my test (use shortSong list might easy to spot)  ***** 
         
@@ -77,12 +72,12 @@ public class SearchByArtistPrefix {
             index++;
         }
         
-        // 3. ****** this jav doc might need to update , it's duplcated with the above one ****
+        // 2. ****** this jav doc might need to update , it's duplcated with the above one ****
         
         // Look in the right direction to see if there is an exact match.
         index--;
 
-        //  6. ******* i didn't find the addFirst() method for Arrays in docs.oracle website  
+        //  3. ******* i didn't find the addFirst() method for Arrays in docs.oracle website  
           //    it seems it's  for LinkList or queue, please let me know if you find it. 
           //   **********
           
@@ -149,7 +144,7 @@ public class SearchByArtistPrefix {
           */
         
         
-        //7.  ******* one more bug i experienced is when i searched with all lowercase or Upper case input, it won't work ****
+        //6.  ******* one more bug i experienced is when i searched with all lowercase or Upper case input, it won't work ****
         
         // Searching result by the artist prefixes.
         Song[] result = searcher.search("Pro");
